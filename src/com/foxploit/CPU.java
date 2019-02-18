@@ -25,7 +25,7 @@ public class CPU {
                         switch (func) {
                             case 32:
                                 select = 0;
-                                System.out.print("add r"+rd);
+                                System.out.println("add r"+rd+", r"+rt+", r"+rs);
                                 break;
                             case 34:
                                 select = 1;
@@ -71,8 +71,8 @@ public class CPU {
                             default:
                                 System.out.println("Invalid R-Type Instruction");
                         }
-                        rd = ALU.calculateResult(regFile.getData(rs), regFile.getData(rt), select);
-                        System.out.println("result : "+ rd);
+                        regFile.setData(rd, ALU.calculateResult(regFile.getData(rs), regFile.getData(rt), select));
+                        System.out.println("result : "+ regFile.getData(rd));
                     }catch (NumberFormatException e){
                         System.out.println("Instruction execution failed");
                         System.exit(-1);
