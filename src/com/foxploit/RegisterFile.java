@@ -2,17 +2,17 @@ package com.foxploit;
 
 public class RegisterFile {
 
-    //register file -> 32 registers
-    static int [] regFile = new int[32];
+    private int[] register = new int[32];
 
-    //insert data
-    public static void setData(int regNo, int data){
-        regFile[regNo] = data;
+    // Retrieve data from the register file
+    public int getData(int address){
+        return register[address];
     }
 
-    //get data
-    public static int setData(int regNo){
-        return regFile[regNo];
+    // Save data to the register file
+    public void setData(int address, int data){
+        register[address] = data;
     }
+
+    // TODO: for beq instructions
 }
-
