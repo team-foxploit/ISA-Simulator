@@ -1,26 +1,26 @@
 package com.foxploit;
 
 public class CPU {
-    public void process(InstructionMemory instMem, RegisterFile regFile){
+    public void process(RegisterFile regFile){
 
         // TODO : Execute each instruction
         int[] codeArray;
-        int rs, rt, rd, shamt, func;
-        for (int pc = 0; pc < instMem.getSize() ; pc++) {
+        int rs, rt, rd, shamt, func, imm;
+        for (int pc = 0; pc < InstructionMemory.getSize() ; pc++) {
             // System.out.println("Instruction: " + pc + " " + instMem.getData(pc));
-            codeArray = InstructionMemory.instructionDecode(instMem, pc);
-            // System.out.println(codeArray[0]);
+            codeArray = InstructionMemory.instructionDecode(pc);
+             System.out.println(codeArray[0]);
             switch (codeArray[0]){
                 case 0:
                     int select = 0;
                     System.out.println("ALU operations");
-                    System.out.println(instMem.getData(pc));
+                    System.out.println(InstructionMemory.getData(pc));
                     try{
-                        rs = InstructionMemory.binaryToDecimal((int) Integer.parseInt(instMem.getData(pc).substring(6, 11)));
-                        rt = InstructionMemory.binaryToDecimal((int) Integer.parseInt(instMem.getData(pc).substring(11, 16)));
-                        rd = InstructionMemory.binaryToDecimal((int) Integer.parseInt(instMem.getData(pc).substring(16, 21)));
-                        shamt = InstructionMemory.binaryToDecimal((int) Integer.parseInt(instMem.getData(pc).substring(21, 26)));
-                        func = InstructionMemory.binaryToDecimal((int) Integer.parseInt(instMem.getData(pc).substring(26)));
+                        rs = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(6, 11)));
+                        rt = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(11, 16)));
+                        rd = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(16, 21)));
+                        shamt = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(21, 26)));
+                        func = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(26)));
                         System.out.print("Source reg : " + rs);
                         System.out.print(" Temp reg : " + rt);
                         System.out.print(" Dest reg : " + rd);
@@ -75,6 +75,53 @@ public class CPU {
                         System.exit(-1);
                         e.printStackTrace();
                     }
+                    break;
+                case 100011:
+                    // TODO : Load instruction
+                    System.out.println("Load instruction");
+                    try{
+                        rs = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(6, 11)));
+                        rt = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(11, 16)));
+                        imm = InstructionMemory.binaryToDecimal((int) Long.parseLong(InstructionMemory.getData(pc).substring(17)));
+                        System.out.print("Source reg : " + rs);
+                        System.out.print(" Temp reg : " + rt);
+                        System.out.println(" Imm value : " + imm);
+                        // TODO : get real data from register file
+                        rt = DataMemory.getDataMemory(rs + imm);
+                        System.out.println("result : "+ rt);
+                    }catch (NumberFormatException e){
+                        System.out.println("Instruction execution failed");
+                        System.exit(-1);
+                        e.printStackTrace();
+                    }catch (NullPointerException e){
+                        System.out.println("Data memory load failed");
+                        System.exit(-1);
+                        e.printStackTrace();
+                    }
+                    break;
+                case 101011:
+                    // TODO : Store instruction
+                    System.out.println("Store instruction");
+                    try{
+                        rs = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(6, 11)));
+                        rt = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(11, 16)));
+                        imm = InstructionMemory.binaryToDecimal((int) Long.parseLong(InstructionMemory.getData(pc).substring(17)));
+                        System.out.print("Source reg : " + rs);
+                        System.out.print(" Temp reg : " + rt);
+                        System.out.println(" Imm value : " + imm);
+                        // TODO : get real data from register file
+                        DataMemory.setDataMemory(rs+imm, rt);
+                        System.out.println("result : "+ rt);
+                    }catch (NumberFormatException e){
+                        System.out.println("Instruction execution failed");
+                        System.exit(-1);
+                        e.printStackTrace();
+                    }catch (NullPointerException e){
+                        System.out.println("Data memory insertion failed");
+                        System.exit(-1);
+                        e.printStackTrace();
+                    }
+                    break;
             }
         }
 

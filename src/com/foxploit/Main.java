@@ -11,7 +11,10 @@ public class Main {
             "11110000111010001000010100000110",
             "11110000111010001000010100000110",
             "11110000111010001000010100000110",
-            "11111111111111111111111111111111"
+            "11111111111111111111111111111111",
+            "10101111111111111111111111111111",
+            "10001111111111111111111111111111"
+
     };
 
     public static void main(String[] args) {
@@ -29,16 +32,13 @@ public class Main {
         // test binaryToDecimal method
         // System.out.println(binaryToDecimal(Integer.parseInt(new Main().smpl_instr[1].substring(0, 5))));
 
-        // Create a InstructionMemory instance
-        InstructionMemory instMem = new InstructionMemory();
-
         int i = 0;
         for (String tempInst: smpl_instr) {
-            instMem.setData(i++, tempInst);
+            InstructionMemory.setData(i++, tempInst);
         }
 
         CPU cpu = new CPU();
-        cpu.process(instMem, regFile);
+        cpu.process(regFile);
 
     }
 
