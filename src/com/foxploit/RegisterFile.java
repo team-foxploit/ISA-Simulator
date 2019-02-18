@@ -14,5 +14,8 @@ public class RegisterFile {
         register[address] = data;
     }
 
-    // TODO: for beq instructions
+    //  for beq instructions
+    public void setReturn(int address){
+        register[31]=address;
+    }
 }
