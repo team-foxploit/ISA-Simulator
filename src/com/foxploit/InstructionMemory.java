@@ -1,42 +1,37 @@
 package com.foxploit;
 import java.util.*;
 
-public class InstructionMemory extends Memory{
+public class InstructionMemory{
 
     // Program counter
-    public int p_c = 0;
+    public static int p_c = 0;
 
     //Create a instruction memory
-    private Map<Integer, String> instructionMemory = new HashMap<>();
+    private static Map<Integer, String> instructionMemory = new HashMap<>();
 
     // Get data from instruction memory
-    @Override
-    public String getData(int address) {
+    public static String getData(int address) {
         return instructionMemory.get(address);
     }
 
     // Get the instruction memory size
-    public int getSize(){
+    public static int getSize(){
         return instructionMemory.size();
     }
 
     // Set data to instruction memory
-    @Override
-    protected void setData(int address, String data) {
+    public static void setData(int address, String data) {
         instructionMemory.put(address, data);
         // System.out.println("set data");
     }
 
-    @Override
-    protected void setData(int addr, int data) {
-    }
-
+/*
     // Instruction Decode
-    public static int[] instructionDecode(InstructionMemory instMem, int instrAddress){
+    public static int[] instructionDecode(int instrAddress){
         // TODO: divide opcode, func and select
         int[] decoded = new int[3];
         try{
-            decoded[0] = (int) Integer.parseInt(instMem.getData(instrAddress).substring(0, 6));
+            decoded[0] = (int) Integer.parseInt(InstructionMemory.getData(instrAddress).substring(0, 6));
             if(decoded[0] != 0){
                 // System.out.println("non R type");
             }else{
@@ -55,9 +50,10 @@ public class InstructionMemory extends Memory{
         // decoded[1] = select
         // decoded[2] = funct
     }
+*/
 
     // Convert binary to decimal
-    static int binaryToDecimal(int n){
+    public static int binaryToDecimal(int n){
         int num = n;
         int dec_value = 0;
         int base = 1;
@@ -71,3 +67,4 @@ public class InstructionMemory extends Memory{
         return dec_value;
     }
 }
+
