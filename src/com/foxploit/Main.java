@@ -22,16 +22,6 @@ public class Main {
         // Create a Register file instance
         RegisterFile regFile = new RegisterFile();
 
-        // TODO : cretae real load save instruction
-        // Dummy register load
-        regFile.setData(0, 10);
-        regFile.setData(1, 20);
-        System.out.println(regFile.getData(0));
-        System.out.println(regFile.getData(1));
-
-        // test binaryToDecimal method
-        // System.out.println(binaryToDecimal(Integer.parseInt(new Main().smpl_instr[1].substring(0, 5))));
-
         int i = 0;
         for (String tempInst: smpl_instr) {
             InstructionMemory.setData(i++, tempInst);

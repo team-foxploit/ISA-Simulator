@@ -4,7 +4,7 @@ import java.util.*;
 public class InstructionMemory{
 
     // Program counter
-    public int p_c = 0;
+    public static int p_c = 0;
 
     //Create a instruction memory
     private static Map<Integer, String> instructionMemory = new HashMap<>();
