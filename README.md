@@ -18,6 +18,6 @@ $Java Main
 - Run the project and you will have the simulator running.
 
 ### Group details
-E-15-139 : D.S.Ishanthi 
-E-15-142 : A.H.G.D.Jayalath 
+E-15-139 : D.S.Ishanthi_
+E-15-142 : A.H.G.D.Jayalath_
 E-15-154 : J.K.C.N.Jayasooriya 
