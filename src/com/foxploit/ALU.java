@@ -42,9 +42,6 @@ public class ALU {
                             result = 0;
                         }
                         break;
-                  case 11:
-                      System.out.println("Syscall");    // Syscall instruction
-                      break;
                   case 12:
                       if(data1==data2){             // Branch equals instruction
                           result = 1;
@@ -63,7 +60,6 @@ public class ALU {
                       break;
 
                 }
-
             return result;
         }
 
