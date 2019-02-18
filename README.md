@@ -7,11 +7,12 @@ A Processor simulator for an ISA with a given instruction set.
 ```
 $Javac Main.java
 ```
-- Next, run the Main file using java
+- Next, run the Main file using java with the second argument as the instruction file (Ex: input.txt)
 ```
-$Java Main
+$Java Main input.txt
 ```
 - The simulator should be running now.
+- You can always use a different txt file.
 
 ### Or, using IntelliJ IDEA
 - you can simply open this repository in [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows)
