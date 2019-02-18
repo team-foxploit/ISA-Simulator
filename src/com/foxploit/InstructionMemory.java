@@ -1,7 +1,7 @@
 package com.foxploit;
 import java.util.*;
 
-public class InstructionMemory extends Memory{
+public class InstructionMemory extends Memory {
 
     // Program counter
     public int p_c = 0;
@@ -30,19 +30,29 @@ public class InstructionMemory extends Memory{
         // System.out.println("set data");
     }
 
-    @Override
+   /* @Override
     protected void setData(int addr, int data) {
     }
-
+*/
     // Instruction Decode
     public static int[] instructionDecode(InstructionMemory instMem, int instrAddress){
         // TODO: divide opcode, func and select
         int[] decoded = new int[3];
         try{
-            decoded[0] = (int) Integer.parseInt(instMem.getData(instrAddress).substring(0, 6));
-            if(decoded[0] != 0){
-                // System.out.println("non R type");
-            }else{
+            decoded[0] = (int) Integer.parseInt(instMem.getData(instrAddress).substring(0,6));
+            System.out.println(decoded[0]);
+
+            if((decoded[0] == 10)||(decoded[0]== 11)||(decoded[0]==10000)){
+                 System.out.println("J type");
+
+                 //take the target address
+
+
+            }
+            else if((decoded[0] == 1000)||(decoded[0]== 1100)||(decoded[0]==100)||(decoded[0]==111)||(decoded[0]==100011)||(decoded[0]==101011)){
+                System.out.println("I type");
+            }
+            else{
                 System.out.println("R type");
                 // TODO : set select and funct
                 // TODO : decoded[1], decoded[2]
