@@ -1,57 +1,3 @@
-/*
-        //read the input file
-
-            BufferedReader br = null;
-            int count=0;
-            try {
-                br = new BufferedReader(new FileReader("C:\\Users\\Sajini\\IdeaProjects\\processor\\src\\com\\foxploit\\input.txt"));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            String strLine = "";
-            while (strLine != null)
-            {
-                try {
-                    strLine =br.readLine();
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                if (strLine==null)
-                    break;
-                //add to the hashmap
-                instMem.setData(count,strLine);
-
-
-                count++;
-            }
-            try {
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-
-     /*  int i = 0;
-        for (String tempInst : smpl_instr) {
-            instMem.setData(i++, tempInst);
-        }
-*/
-/*
-        //check instruction memmory has got the data
-        System.out.println(instMem.instructionMemory);
-
-
-
-        CPU cpu = new CPU();
-        cpu.process(instMem, regFile);
-
-    }
-}
-
-
-*/
 package com.foxploit;
 
 import java.io.BufferedReader;
@@ -78,45 +24,55 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Create a Register file instance
-        RegisterFile regFile = new RegisterFile();
+        if(args.length<1){
+            System.out.println("Not enough arguments");
 
-        int i = 0;
-        BufferedReader br = null;
-        int count=0;
-        try {
-            br = new BufferedReader(new FileReader("input.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
-        String strLine = "";
-        while (strLine != null)
-        {
-            try {
-                strLine =br.readLine();
+        else if(args.length>1){
+            System.out.println("Too many arguments");
 
+        }
+        else {
+
+            // Create a Register file instance
+            RegisterFile regFile = new RegisterFile();
+
+            int i = 0;
+            BufferedReader br = null;
+            int count = 0;
+            try {
+                br = new BufferedReader(new FileReader(args[0]));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            String strLine = "";
+            while (strLine != null) {
+                try {
+                    strLine = br.readLine();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if (strLine == null)
+                    break;
+                //add to the hashmap
+                InstructionMemory.setData(count, strLine);
+
+
+                count++;
+            }
+            try {
+                br.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            if (strLine==null)
-                break;
-            //add to the hashmap
-            InstructionMemory.setData(count,strLine);
-
-
-            count++;
-        }
-        try {
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            CPU cpu = new CPU();
+            cpu.process(regFile);
         }
 //        for (String tempInst: smpl_instr) {
 //            InstructionMemory.setData(i++, tempInst);
 //        }
 
-        CPU cpu = new CPU();
-        cpu.process(regFile);
 
     }
 
