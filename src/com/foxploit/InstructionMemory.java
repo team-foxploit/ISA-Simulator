@@ -20,6 +20,7 @@ public class InstructionMemory extends Memory{
     protected void setData(int address, int data) {
         instructionMemory.put(address, data);
         p_c ++;
+        // TODO: divide opcode, func and select
     }
 
     // Convert binary to decimal
