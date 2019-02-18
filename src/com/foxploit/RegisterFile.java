@@ -16,6 +16,6 @@ public class RegisterFile {
 
     //  for beq instructions
     public static void setReturn(int address){
-        register[31]=address;
+        register[31] = address;
     }
 }

@@ -9,7 +9,7 @@ public class CPU {
         for (int pc = 0; pc < InstructionMemory.getSize() ; pc++) {
             // System.out.println("Instruction: " + pc + " " + instMem.getData(pc));
             codeArray = InstructionMemory.instructionDecode(pc);
-             System.out.println(codeArray[0]);
+            System.out.println(codeArray[0]);
             switch (codeArray[0]){
                 case 0:
                     int select = 0;
@@ -125,6 +125,17 @@ public class CPU {
                     imm = InstructionMemory.binaryToDecimal((int) Long.parseLong(InstructionMemory.getData(pc).substring(17)));
                     System.out.println("rs: "+rs+" rt: "+rt+" imm: "+imm);
                     DataMemory.setDataMemory(ALU.calculateResult(regFile.getData(rs), imm, 0), regFile.getData(rt));
+                    break;
+                case 10:
+                    InstructionMemory.p_c = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(6))) - 1;
+                    break;
+                case 11:
+                    RegisterFile.setReturn(InstructionMemory.p_c);
+                    InstructionMemory.p_c = InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(6))) - 1;
+                    break;
+                case 10000:
+                    int addr = regFile.getData(InstructionMemory.binaryToDecimal((int) Integer.parseInt(InstructionMemory.getData(pc).substring(6))));
+                    InstructionMemory.p_c = addr - 1;
                     break;
                 default:
                     System.out.println("Invalid instruction");
