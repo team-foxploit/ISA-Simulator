@@ -25,7 +25,7 @@ public class InstructionMemory{
         // System.out.println("set data");
     }
 
-
+/*
     // Instruction Decode
     public static int[] instructionDecode(int instrAddress){
         // TODO: divide opcode, func and select
@@ -50,6 +50,7 @@ public class InstructionMemory{
         // decoded[1] = select
         // decoded[2] = funct
     }
+*/
 
     // Convert binary to decimal
     public static int binaryToDecimal(int n){
