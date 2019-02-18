@@ -3,6 +3,9 @@ import java.util.*;
 
 public class InstructionMemory extends Memory{
 
+    // Program counter
+    public static int p_c = 0;
+
     //Create a instruction memory
     private Map<Integer, Integer> instructionMemory = new HashMap<>();
 
