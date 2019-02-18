@@ -1,6 +1,7 @@
 package com.foxploit;
 
 public class RegisterFile {
+
     static int[] register = new int[32];
 
     // Retrieve data from the register file
