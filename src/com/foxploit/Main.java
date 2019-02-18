@@ -18,8 +18,13 @@ public class Main {
 
         // Create a Register file instance
         RegisterFile regFile = new RegisterFile();
-        regFile.setData(31, 10);
-        System.out.println(regFile.getData(31));
+
+        // TODO : cretae real load save instruction
+        // Dummy register load
+        regFile.setData(0, 10);
+        regFile.setData(1, 20);
+        System.out.println(regFile.getData(0));
+        System.out.println(regFile.getData(1));
 
         // test binaryToDecimal method
         // System.out.println(binaryToDecimal(Integer.parseInt(new Main().smpl_instr[1].substring(0, 5))));
