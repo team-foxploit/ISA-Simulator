@@ -1,63 +1,65 @@
+package com.foxploit;
 
 public class ALU {
-        int result=0;
-        public int calculateResult(int data1,int data2,int select){
+        public static int calculateResult(int data1, int data2, int select){
+            int result = 0;
               switch (select){
+                    case 0:
+                        result = data1 + data2;         // Add instruction
+                        System.out.println("in ALU add");
+                        break;
                     case 1:
-                        result=data1+data2;         //add
+                        result = data1 - data2;         // Sub instruction
                         break;
                     case 2:
-                        result=data1-data2;         //sub
+                        result = data1 * data2;         // Mul instruction
                         break;
                     case 3:
-                        result=data1*data2;         //mul
+                        result = data1 / data2;         // Div instruction
                         break;
                     case 4:
-                        result=data1/data2;         //div
+                        result = data1 & data2;         // And instruction
                         break;
                     case 5:
-                        result=data1&data2;         //and
+                        result = data1 | data2;         // Or instruction
                         break;
                     case 6:
-                        result=data1|data2;         //or
+                        result = ~(data1 | data2);      // Nor instruction
                         break;
                     case 7:
-                        result=~(data1|data2);      //nor
+                        result = data1 ^ data2;         // Xor instruction
                         break;
                     case 8:
-                        result=data1^data2;         //xor
+                        result = data1 >> data2;        // Shift right instruction
                         break;
                     case 9:
-                        result=data1>>data2;        //shift right
+                        result = data1 << data2;        // Shift left instruction
                         break;
                     case 10:
-                        result=data1<<data2;        //shift left
-                        break;
-                    case 11:
-                        if(data1<data2){            //less than
-                            result=1;
+                        if(data1 < data2){            // Less than instruction
+                            result = 1;
                         }
                         else{
-                            result=0;
+                            result = 0;
                         }
                         break;
+                  case 11:
+                      System.out.println("Syscall");    // Syscall instruction
+                      break;
                   case 12:
-                      System.out.println("Syscall");    //syscall
+                      if(data1==data2){             // Branch equals instruction
+                          result = 1;
+                      }
+                      else{
+                          result = 0;
+                      }
                       break;
                   case 13:
-                      if(data1==data2){             //branch equals
-                          result=1;
+                      if(data1 > data2){              // Branch greater than instruction
+                          result = 1;
                       }
                       else{
-                          result=0;
-                      }
-                      break;
-                  case 14:
-                      if(data1>data2){              //branch greater than
-                          result=1;
-                      }
-                      else{
-                          result=0;
+                          result = 0;
                       }
                       break;
 
@@ -68,7 +70,3 @@ public class ALU {
 
 
 }
-
-
-
-

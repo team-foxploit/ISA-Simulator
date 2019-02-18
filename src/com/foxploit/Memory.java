@@ -2,7 +2,9 @@ package com.foxploit;
 
 public abstract class Memory {
 
-    protected abstract int getData(int addr);
+    protected abstract String getData(int addr);
+
+    protected abstract void setData(int addr, String data);
 
     protected abstract void setData(int addr, int data);
 }
