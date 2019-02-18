@@ -2,11 +2,16 @@ package com.foxploit;
 
 public class Main {
 
-    String[] smpl_instr = {
+    static String[] smpl_instr = {
+            "00100000000000000000000000001100",
+            "00100000001000000000000000001010",
+            "00000000000000010001000100100000",
             "11110000111010001000010100000110",
             "11110000111010001000010100000110",
             "11110000111010001000010100000110",
-            "11110000111010001000010100000110"
+            "11110000111010001000010100000110",
+            "11110000111010001000010100000110",
+            "11111111111111111111111111111111"
     };
 
     static int binaryToDecimal(int n){
@@ -42,7 +47,17 @@ public class Main {
 
         // Create a InstructionMemory instance
         Memory instMem = new InstructionMemory();
-        instMem.setData(101101, 1000);
-        System.out.println(instMem.getData(101101));
+
+        // TODO : Store all instructions in the InstructionMemory at first
+        int i = 0;
+        for (String tempInst: smpl_instr) {
+            instMem.setData(++i, tempInst);
+        }
+
+        // TODO : Execute each instruction
+
+        // instMem.setData(101101, smpl_instr[0]);
+        System.out.println(instMem.getData(1));
     }
+
 }
