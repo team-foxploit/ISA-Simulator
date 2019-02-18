@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73cb6e99-cdef-48b7-af17-6fadfc332897" name="Default Changelist" comment="" />
     <list default="true" id="73cb6e99-cdef-48b7-af17-6fadfc332897" name="Default Changelist" comment="register file initialized">
       <change afterPath="$PROJECT_DIR$/src/com/foxploit/RegisterFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
