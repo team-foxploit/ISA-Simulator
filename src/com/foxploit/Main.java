@@ -1,48 +1,94 @@
 package com.foxploit;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+
 public class Main {
 
-    String[] smpl_instr = {
+   /* static String[] smpl_instr = {
+            "00100000000000000000000000001100",
+            "00100000001000000000000000001010",
+            "00000000000000010001000100100000",
             "11110000111010001000010100000110",
             "11110000111010001000010100000110",
             "11110000111010001000010100000110",
-            "11110000111010001000010100000110"
+            "11110000111010001000010100000110",
+            "11110000111010001000010100000110",
+            "11111111111111111111111111111111"
     };
-
-    static int binaryToDecimal(int n){
-        int num = n;
-        int dec_value = 0;
-
-        // Initializing base
-        // value to 1, i.e 2^0
-        int base = 1;
-
-        int temp = num;
-        while (temp > 0){
-            int last_digit = temp % 10;
-            temp = temp / 10;
-
-            dec_value += last_digit * base;
-
-            base = base * 2;
-        }
-
-        return dec_value;
-    }
-
+*/
     public static void main(String[] args) {
 
-        // There should be only one register file
+
+        // Create a Register file instance
         RegisterFile regFile = new RegisterFile();
-        regFile.setData(31, 10);
-        System.out.println(regFile.getData(31));
+
+        // TODO : cretae real load save instruction
+        // Dummy register load
+        regFile.setData(0, 10);
+        regFile.setData(1, 20);
+        System.out.println(regFile.getData(0));
+        System.out.println(regFile.getData(1));
 
         // test binaryToDecimal method
         // System.out.println(binaryToDecimal(Integer.parseInt(new Main().smpl_instr[1].substring(0, 5))));
 
         // Create a InstructionMemory instance
-        Memory instMem = new InstructionMemory();
-        instMem.setData(101101, 1000);
-        System.out.println(instMem.getData(101101));
+        InstructionMemory instMem = new InstructionMemory();
+
+
+        //read the input file
+
+            BufferedReader br = null;
+            int count=0;
+            try {
+                br = new BufferedReader(new FileReader("C:\\Users\\Sajini\\IdeaProjects\\processor\\src\\com\\foxploit\\input.txt"));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            String strLine = "";
+            while (strLine != null)
+            {
+                try {
+                    strLine =br.readLine();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (strLine==null)
+                    break;
+                //add to the hashmap
+                instMem.setData(count,strLine);
+
+
+                count++;
+            }
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+
+     /*  int i = 0;
+        for (String tempInst : smpl_instr) {
+            instMem.setData(i++, tempInst);
+        }
+*/
+        //check instruction memmory has got the data
+        System.out.println(instMem.instructionMemory);
+
+
+
+        CPU cpu = new CPU();
+        cpu.process(instMem, regFile);
+
     }
 }
+
+
+
