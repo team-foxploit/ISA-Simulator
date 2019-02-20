@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73cb6e99-cdef-48b7-af17-6fadfc332897" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ISA-Simulator/com/foxploit/ALU.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ISA-Simulator/com/foxploit/ALU.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ISA-Simulator/com/foxploit/CPU.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ISA-Simulator/com/foxploit/CPU.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ISA-Simulator/com/foxploit/Memory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/foxploit/ALU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/foxploit/ALU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/foxploit/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/foxploit/CPU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/foxploit/Memory.java" beforeDir="false" />
-    </list>
+    <list default="true" id="73cb6e99-cdef-48b7-af17-6fadfc332897" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/foxploit/CPU.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+            <state relative-caret-position="1915">
+              <caret line="132" column="24" lean-forward="true" selection-start-line="132" selection-start-column="24" selection-end-line="132" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -163,7 +155,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550517569270" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550519082611" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -224,10 +216,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49900597" visible="true" weight="0.13892618" />
-      <window_info id="Structure" order="1" sideWeight="0.500994" side_tool="true" visible="true" weight="0.13892618" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.13892618" />
+      <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" visible="true" weight="0.13892618" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -235,7 +226,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2875354" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6926346" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -376,8 +367,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/foxploit/CPU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        <state relative-caret-position="1915">
+          <caret line="132" column="24" lean-forward="true" selection-start-line="132" selection-start-column="24" selection-end-line="132" selection-end-column="24" />
         </state>
       </provider>
     </entry>
